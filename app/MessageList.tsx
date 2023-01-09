@@ -12,12 +12,20 @@ type Props = {
 
 function MessageList({ initialMessages }: Props) {
   // ---SWR------
+  // const {
+  //   data: messages,
+  //   error,
+  //   mutate,
+  // } = useSWR<Message[]>("/api/getMessages", fetcher);
+  // -------------
+  // SWR TEST2
+
   const {
     data: messages,
     error,
     mutate,
-  } = useSWR<Message[]>("/api/getMessages", fetcher);
-  // -------------
+  } = useSWR<Message[]>("http://localhost:3000/api/getMessages", fetcher);
+  // ------
 
   useEffect(() => {
     const channel = clientPusher.subscribe("messages");
