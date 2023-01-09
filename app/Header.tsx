@@ -53,7 +53,9 @@ function Header({ session }: any) {
             width={50}
             alt="Logo"
           />
-          <p className="text-blue-400">Welcome to Meta Messenger</p>
+          <p className="text-blue-400">
+            Welcome to NextJS 13 & Forum Messenger
+          </p>
         </div>
         <Link
           href="/auth/signin"
