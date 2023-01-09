@@ -48,7 +48,7 @@ function Header({ session }: any) {
         <div className="flex space-x-2 items-center">
           <Image
             className="rounded-full mx-2 object-contain"
-            src="https://static.xx.fbcdn.net/rsrc.php/v3/ym/r/__J0RTJO3M_.png"
+            src="https://cdn.pixabay.com/photo/2014/07/01/15/40/balloon-381334_1280.png"
             height={10}
             width={50}
             alt="Logo"
