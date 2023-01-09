@@ -19,7 +19,14 @@ type Props = {
 function ChatInput({ session }: Props) {
   const [input, setInput] = useState("");
   // SWR setting
-  const { data: messages, error, mutate } = useSWR("/api/getMessages", fetcher);
+  // const { data: messages, error, mutate } = useSWR("/api/getMessages", fetcher);
+
+  const {
+    data: messages,
+    error,
+    mutate,
+  } = useSWR("http://localhost:3000/api/getMessages", fetcher);
+
   // console.log(messages);
 
   const addMessage = async (e: FormEvent<HTMLFormElement>) => {
