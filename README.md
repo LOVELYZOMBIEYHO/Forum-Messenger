@@ -19,4 +19,6 @@ Notice
 
 1. Google OAUTH is easier to set than Facebook
 
-## Experimental Function with unstable_getServerSession, NextJS App DIR, Please download and use "npm run dev"
+## Experimental Function with unstable_getServerSession, NextJS App DIR, it maybe changed and please check the update documents.
+
+## Demo: forum-messenger.vercel.app
