@@ -24,7 +24,7 @@ function MessageList({ initialMessages }: Props) {
     data: messages,
     error,
     mutate,
-  } = useSWR<Message[]>("http://localhost:3000/api/getMessages", fetcher);
+  } = useSWR<Message[]>("/api/getMessages", fetcher);
   // ------
 
   useEffect(() => {
