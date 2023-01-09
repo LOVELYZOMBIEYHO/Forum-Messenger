@@ -1,9 +1,18 @@
 import { getProviders, signIn } from "next-auth/react";
 import Image from "next/image";
 import SignInComponent from "./SignInComponent";
+
+// ---unstable_getServerSession
+import { authOptions } from "../../../pages/api/auth/[...nextauth]";
+import { unstable_getServerSession } from "next-auth/next";
+// ------
+
 async function SignInpage() {
   const providers = await getProviders();
   //   const providers = getProviders();
+
+  const session = await unstable_getServerSession(authOptions);
+
   return (
     <div className="grid justify-center">
       <div className="grid justify-center">
@@ -15,7 +24,7 @@ async function SignInpage() {
           alt="Messenger Icon"
         />
       </div>
-      <SignInComponent providers={providers} />
+      <SignInComponent providers={providers} session={session} />
     </div>
   );
 }

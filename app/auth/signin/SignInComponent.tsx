@@ -1,15 +1,18 @@
 "use client";
 import { getProviders, signIn, getSession } from "next-auth/react";
 import { useState, useEffect } from "react";
+import { unstable_getServerSession } from "next-auth/next";
+
 type Props = {
   providers: Awaited<ReturnType<typeof getProviders>>;
   //   Awaited<ReturnType<typeof FunctionName>>;
   // or
   //   providers: any;
+  session: Awaited<ReturnType<typeof unstable_getServerSession>>;
 };
 
-function SignInComponent({ providers }: Props) {
-  const session = getSession();
+function SignInComponent({ providers, session }: Props) {
+  //   const session = getSession();
   //   check the session and providers
   console.log("session", session);
   console.log("providers", providers);
@@ -18,10 +21,8 @@ function SignInComponent({ providers }: Props) {
   //     callbackUrl: "/account/loadingregister",
   //   });
   // };
-  useEffect(() => {
-    console.log("providers", providers);
-  }, [providers]);
-  //   if (providers == null) return <div>load</div>;
+
+  // if (providers == null) return <div>load</div>;
 
   return (
     <div>
@@ -69,6 +70,10 @@ function SignInComponent({ providers }: Props) {
         </div>
       )}
     </div>
+
+    // ----
+
+    // <div className="flex justify-center">p</div>
   );
 }
 

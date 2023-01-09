@@ -11,11 +11,16 @@ import { unstable_getServerSession } from "next-auth/next";
 // ------
 
 async function Homepage() {
-  const data = await fetch(
-    `${process.env.VERCEL_URL || "http://localhost:3000"}/api/getMessages`
-  ).then((res) => res.json());
+  // ---Initial message but not work
+  // const data = fetch(
+  //   `${process.env.VERCEL_URL || "http://localhost:3000"}/api/getMessages`
+  // ).then((res) => res.json());
 
-  const messages: Message[] = data.messages;
+  // const messages: Message[] = data.messages;
+  // ---Initial message but not work
+
+  const messages: Message[] = [];
+
   const session = await unstable_getServerSession(authOptions);
 
   // const session = getSession();

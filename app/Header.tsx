@@ -8,18 +8,17 @@ import { authOptions } from "../pages/api/auth/[...nextauth]";
 
 import { useSession } from "next-auth/react";
 
-async function Header() {
+function Header({ session }: any) {
   type Props = {
     // user: any;
     session: Awaited<ReturnType<typeof unstable_getServerSession>>;
     // session: any;
   };
 
-  const session = await unstable_getServerSession(authOptions);
+  // const session = await unstable_getServerSession(authOptions);
 
   // const { data: session } = useSession();
   // const isUser = session?.user?.email === message.email;
-
   if (session)
     return (
       <header className="sticky top-0 z-50 bg-white flex justify-between items-center p-10 shadow-sm">
